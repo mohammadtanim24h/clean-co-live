@@ -1,13 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Navbar = ({children}) => {
+const Navbar = ({ children }) => {
     return (
         <div className="drawer drawer-end">
             <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col">
                 {/* <!-- Navbar --> */}
-                <div className="w-full navbar bg-base-100">
+                <div className="w-full navbar md:px-20 bg-base-100">
                     <div className="flex-1 px-2 mx-2 text-2xl">Clean Co.</div>
                     <div className="flex-none lg:hidden">
                         <label
@@ -30,22 +30,69 @@ const Navbar = ({children}) => {
                         </label>
                     </div>
                     <div className="flex-none hidden lg:block">
-                        <ul className="menu menu-horizontal">
+                        <ul className="menu menu-horizontal gap-x-2">
                             {/* <!-- Navbar menu content here --> */}
                             <li>
-                                <NavLink className="rounded-lg hover:bg-primary hover:text-white" to="/">Home</NavLink>
+                                <NavLink
+                                    className="rounded-lg hover:bg-primary hover:text-white"
+                                    to="/"
+                                >
+                                    Home
+                                </NavLink>
                             </li>
                             <li>
-                                <NavLink className="rounded-lg hover:bg-primary hover:text-white" to="/about">About</NavLink>
+                                <NavLink
+                                    className="rounded-lg hover:bg-primary hover:text-white"
+                                    to="/about"
+                                >
+                                    About
+                                </NavLink>
                             </li>
                             <li>
-                                <NavLink className="rounded-lg hover:bg-primary hover:text-white" to="/services">Services</NavLink>
+                                <NavLink
+                                    className="rounded-lg hover:bg-primary hover:text-white"
+                                    to="/services"
+                                >
+                                    Services
+                                </NavLink>
                             </li>
                             <li>
-                                <NavLink className="rounded-lg hover:bg-primary hover:text-white" to="/contact">Contact</NavLink>
+                                <NavLink
+                                    className="rounded-lg hover:bg-primary hover:text-white"
+                                    to="/contact"
+                                >
+                                    Contact
+                                </NavLink>
                             </li>
                             <li>
-                                <NavLink className="rounded-lg hover:bg-primary hover:text-white" to="/login">Login</NavLink>
+                                <NavLink
+                                    className="rounded-lg hover:bg-primary hover:text-white"
+                                    to="/login"
+                                >
+                                    Login
+                                </NavLink>
+                            </li>
+                            <li className="dropdown dropdown-hover dropdown-end">
+                                <label
+                                    tabindex="0"
+                                    className="rounded-lg hover:bg-primary hover:text-white btn btn-outline btn-primary"
+                                >
+                                    BOOK NOW
+                                </label>
+                                <ul
+                                    tabindex="0"
+                                    className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+                                >
+                                    <li>
+                                        <a>Item 1</a>
+                                    </li>
+                                    <li>
+                                        <a>Item 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <button data-toggle-theme="dark,light" data-act-class="ACTIVECLASS">Theme</button>
                             </li>
                         </ul>
                     </div>
