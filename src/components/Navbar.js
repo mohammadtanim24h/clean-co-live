@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Navbar = ({children}) => {
     return (
@@ -32,10 +33,19 @@ const Navbar = ({children}) => {
                         <ul className="menu menu-horizontal">
                             {/* <!-- Navbar menu content here --> */}
                             <li>
-                                <a>Navbar Item 1</a>
+                                <NavLink className="rounded-lg hover:bg-primary hover:text-white" to="/">Home</NavLink>
                             </li>
                             <li>
-                                <a>Navbar Item 2</a>
+                                <NavLink className="rounded-lg hover:bg-primary hover:text-white" to="/about">About</NavLink>
+                            </li>
+                            <li>
+                                <NavLink className="rounded-lg hover:bg-primary hover:text-white" to="/services">Services</NavLink>
+                            </li>
+                            <li>
+                                <NavLink className="rounded-lg hover:bg-primary hover:text-white" to="/contact">Contact</NavLink>
+                            </li>
+                            <li>
+                                <NavLink className="rounded-lg hover:bg-primary hover:text-white" to="/login">Login</NavLink>
                             </li>
                         </ul>
                     </div>
