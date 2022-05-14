@@ -91,7 +91,7 @@ const Navbar = ({ children }) => {
                                     </li>
                                 </ul>
                             </li>
-                            <label class="swap swap-rotate ml-2">
+                            <label className="swap swap-rotate ml-2">
                                 {/* <!-- this hidden checkbox controls the state --> */}
                                 <input
                                     data-toggle-theme="dark,light"
@@ -100,7 +100,7 @@ const Navbar = ({ children }) => {
 
                                 {/* <!-- sun icon --> */}
                                 <svg
-                                    class="swap-on fill-current w-10 h-10"
+                                    className="swap-on fill-current w-10 h-10"
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24"
                                 >
@@ -109,7 +109,7 @@ const Navbar = ({ children }) => {
 
                                 {/* <!-- moon icon --> */}
                                 <svg
-                                    class="swap-off fill-current w-10 h-10"
+                                    className="swap-off fill-current w-10 h-10"
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24"
                                 >
