@@ -3,8 +3,8 @@ import bucketGirl from '../../assets/images/bucketgirl.png';
 
 const Landing = () => {
     return (
-        <div className="h-[200vh]">
-            <div class="hero h-screen lg:h-[60vh] bg-accent mt-16">
+        <div>
+            <div class="hero h-screen lg:h-[60vh] bg-accent">
                 <div class="hero-content flex-col-reverse lg:flex-row-reverse">
                     <div className="h-[60vh] shrink-0">
                         <img
@@ -26,8 +26,18 @@ const Landing = () => {
                 </div>
             </div>
             {/* Free Estimate */}
-            <div>
-                <h1 className="text-3xl">Get Free Estimate</h1>
+            <div className="shadow-lg p-10 w-3/4 mx-auto bg-base-200 mt-[-60px] relative z-99 rounded-xl">
+                <h1 className="text-3xl mb-6">Get Free Estimate</h1>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <input type="text" placeholder="Type here" class="input input-bordered w-full" />
+                    <input type="text" placeholder="Type here" class="input input-bordered w-full" />
+                    <input type="text" placeholder="Type here" class="input input-bordered w-full" />
+                    <input type="text" placeholder="Type here" class="input input-bordered w-full" />
+                    <input type="text" placeholder="Type here" class="input input-bordered w-full" />
+                    <input type="text" placeholder="Type here" class="input input-bordered w-full" />
+                    <input type="text" placeholder="Type here" class="input input-bordered w-full" />
+                    <input type="text" placeholder="Type here" class="input input-bordered w-full" />
+                </div>
             </div>
         </div>
     );
