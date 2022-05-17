@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const DashboardSidebar = ({children}) => {
+    // testing to see if push is working
     return (
         <div className="drawer drawer-mobile bg-accent">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
