@@ -38,7 +38,7 @@ const Landing = () => {
                     <input type="text" placeholder="Type here" className="input input-bordered w-full" />
                     <input type="text" placeholder="Type here" className="input input-bordered w-full" />
                 </div>
-                <button className="btn btn-primary text-white px-4 py-2 mt-5">Request a Quote</button>
+                <button className="btn btn-primary px-4 py-2 mt-5">Request a Quote</button>
             </div>
         </div>
     );

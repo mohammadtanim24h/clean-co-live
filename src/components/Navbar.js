@@ -1,13 +1,38 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import useAdmin from "../hooks/useAdmin";
 
 const Navbar = ({ children }) => {
+    const [dark, setDark] = useState(false);
+    const [admin] = useAdmin();
+    const { pathname } = useLocation();
     return (
-        <div className="drawer drawer-end">
+        <div className="drawer drawer-end" data-theme={dark ? "dark" : "light"}>
             <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col">
                 {/* <!-- Navbar --> */}
                 <div className="w-full navbar md:px-20 sticky top-0 z-50 bg-base-100">
+                    {pathname.includes("dashboard") && (
+                        <label
+                            htmlFor="my-drawer-2"
+                            className="btn btn-ghost drawer-button lg:hidden"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-5 w-5"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M4 6h16M4 12h16M4 18h7"
+                                />
+                            </svg>
+                        </label>
+                    )}
                     <div className="flex-1 px-2 mx-2 text-2xl">Clean Co.</div>
                     <div className="flex-none lg:hidden">
                         <label
@@ -40,6 +65,16 @@ const Navbar = ({ children }) => {
                                     Home
                                 </NavLink>
                             </li>
+                            {admin && (
+                                <li>
+                                    <NavLink
+                                        className="rounded-lg hover:bg-primary hover:text-white"
+                                        to="/dashboard/add-service"
+                                    >
+                                        Dashboard
+                                    </NavLink>
+                                </li>
+                            )}
                             <li>
                                 <NavLink
                                     className="rounded-lg hover:bg-primary hover:text-white"
@@ -84,17 +119,17 @@ const Navbar = ({ children }) => {
                                     className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
                                 >
                                     <li>
-                                        <a>Item 1</a>
+                                        <a>Quick Book</a>
                                     </li>
                                     <li>
-                                        <a>Item 2</a>
+                                        <a>Pre Book</a>
                                     </li>
                                 </ul>
                             </li>
                             <label className="swap swap-rotate ml-2">
                                 {/* <!-- this hidden checkbox controls the state --> */}
                                 <input
-                                    data-toggle-theme="dark,light"
+                                    onClick={() => setDark(!dark)}
                                     type="checkbox"
                                 />
 
@@ -127,11 +162,74 @@ const Navbar = ({ children }) => {
                 <ul className="menu p-4 overflow-y-auto w-80 bg-base-100">
                     {/* <!-- Sidebar content here --> */}
                     <li>
-                        <a>Sidebar Item 1</a>
+                        <NavLink
+                            className="rounded-lg hover:bg-primary hover:text-white"
+                            to="/"
+                        >
+                            Home
+                        </NavLink>
+                    </li>
+                    {admin && (
+                        <li>
+                            <NavLink
+                                className="rounded-lg hover:bg-primary hover:text-white"
+                                to="/dashboard"
+                            >
+                                Dashboard
+                            </NavLink>
+                        </li>
+                    )}
+                    <li>
+                        <NavLink
+                            className="rounded-lg hover:bg-primary hover:text-white"
+                            to="/about"
+                        >
+                            About
+                        </NavLink>
                     </li>
                     <li>
-                        <a>Sidebar Item 2</a>
+                        <NavLink
+                            className="rounded-lg hover:bg-primary hover:text-white"
+                            to="/services"
+                        >
+                            Services
+                        </NavLink>
                     </li>
+                    <li>
+                        <NavLink
+                            className="rounded-lg hover:bg-primary hover:text-white"
+                            to="/contact"
+                        >
+                            Contact
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                            className="rounded-lg hover:bg-primary hover:text-white"
+                            to="/login"
+                        >
+                            Login
+                        </NavLink>
+                    </li>
+                    <div className="dropdown dropdown-end">
+                        <label
+                            tabIndex="0"
+                            className="btn m-1 w-full bg-primary text-white hover:bg-primary"
+                        >
+                            Book Now
+                        </label>
+                        <ul
+                            tabIndex="0"
+                            className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-full"
+                        >
+                            <li>
+                                <a>Quick Book</a>
+                            </li>
+                            <li>
+                                <a>Pre Book</a>
+                            </li>
+                        </ul>
+                    </div>
                 </ul>
             </div>
         </div>
